@@ -1,4 +1,4 @@
-﻿using ClienteMauiFrontend.Views;
+﻿using CommunityToolkit.Maui;
 
 namespace ClienteMauiFrontend
 {
@@ -7,8 +7,13 @@ namespace ClienteMauiFrontend
         public App()
         {
             InitializeComponent();
+            // Registrar CommunityToolkit.Maui
+            var builder = MauiApp.CreateBuilder()
+                .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
+                .Build();
 
-            MainPage = new NavigationPage(new CrearClienteView());
+            MainPage = new AppShell();
         }
     }
 }

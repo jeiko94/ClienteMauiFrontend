@@ -5,14 +5,41 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ClienteMauiFrontend"
     xmlns:views="clr-namespace:ClienteMauiFrontend.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Title="ClienteMauiFrontend">
+    FlyoutBehavior="Flyout">
 
-    <ShellContent Route="MainMenuCliente" ContentTemplate="{DataTemplate views:MainMenuView}"/>
-    <ShellContent Route="CrearClienteView" ContentTemplate="{DataTemplate views:CrearClienteView}"  />
-    <ShellContent Route="ActualizarClienteView" ContentTemplate="{DataTemplate views:ActualizarClienteView}"/>
-    <ShellContent Route="BorrarClienteView" ContentTemplate="{DataTemplate views:BorrarClienteView}"/>
-    <ShellContent Route="BuscarClienteView" ContentTemplate="{DataTemplate views:BuscarClienteView}"/>
-    <ShellContent Route="ListarClientesView" ContentTemplate="{DataTemplate views:ListarClientesView}"/>
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="150" BackgroundColor="Green">
+            <Label Text="ClienteApp"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Menu principal" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate views:MainMenuView}"/>    
+    </FlyoutItem>
+
+    <FlyoutItem Title="Crear Cliente" Icon="dotnet_bot.png" Route="CrearClienteView">
+        <ShellContent ContentTemplate="{DataTemplate views:CrearClienteView}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Actualizar Cliente" Icon="dotnet_bot.png" Route="ActualizarClienteView">
+        <ShellContent ContentTemplate="{DataTemplate views:ActualizarClienteView}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Borrar Cliente" Icon="dotnet_bot.png" Route="BorrarClienteView">
+        <ShellContent ContentTemplate="{DataTemplate views:BorrarClienteView}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Buscar Cliente" Icon="dotnet_bot.png" Route="BuscarClienteView">
+        <ShellContent ContentTemplate="{DataTemplate views:BuscarClienteView}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Listar Cliente" Icon="dotnet_bot.png" Route="ListarClientesView">
+        <ShellContent ContentTemplate="{DataTemplate views:ListarClientesView}"/>
+    </FlyoutItem>
 
 </Shell>
