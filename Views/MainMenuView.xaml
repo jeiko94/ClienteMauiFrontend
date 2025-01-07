@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClienteMauiFrontend.Views.MainMenuView">
+
+    <ScrollView>
+        <Grid Padding="20" RowSpacing="20" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Boton crear cliente-->
+            <Frame Grid.Row="0" Grid.Column="0"
+                   BackgroundColor="#6200EE"
+                   HasShadow="True"
+                   Padding="10">
+                <Button Text="Crear cliente"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Command="{Binding CrearClienteCommand}"/>
+            </Frame>
+
+            <!--Botton actualizar cliente-->
+            <Frame Grid.Row="0" Grid.Column="1"
+                   BackgroundColor="#03DAC5"
+                   HasShadow="True"
+                   Padding="10">
+                <Button Text="Actualizar Cliente"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Command="{Binding ActualizarClienteCommand}"/>
+            </Frame>
+
+            <!--Boton buscar cliente-->
+            <Frame Grid.Row="1" Grid.Column="0"
+                   BackgroundColor="Blue"
+                   HasShadow="True"
+                   Padding="10">
+                <Button Text="Buscar Cliente"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Command="{Binding BuscarClienteCommand}"/>
+            </Frame>
+
+            <!--Botton Borrar cliente-->
+            <Frame Grid.Row="1" Grid.Column="1"
+                   BackgroundColor="Green"
+                   HasShadow="False"
+                   Padding="10">
+                <Button Text="Borrar cliente"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Command="{Binding BorrarClienteCommand}"/>
+            </Frame>
+
+            <!--Listar clientes-->
+            <Frame Grid.Row="2" Grid.Column="0" BorderColor="White"
+                   BackgroundColor="BlanchedAlmond"
+                   HasShadow="True"
+                   Padding="15">
+                <Button Text="Listar clientes"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Command="{Binding ListarClientesCommand}"/>
+            </Frame>
+
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

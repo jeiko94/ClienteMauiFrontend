@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ClienteMauiFrontend.ViewModels"
+             x:Class="ClienteMauiFrontend.Views.ListarClientesView"
+             Title="Listar Clientes">
+
+    <ContentPage.BindingContext>
+        <vm:ClienteViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="10">
+        <Label Text="Clientes Registrados"
+               FontSize="24"
+               HorizontalOptions="Center"/>
+
+        <CollectionView ItemsSource="{Binding Clientes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="#CCCCCC" CornerRadius="10" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding Nombre}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Email}"
+                                   FontSize="14"
+                                   TextColor="Gray"/>
+                            <Label Text="{Binding FechaRegistro, StringFormat='{0:dd/MM/yyyy}'}"
+                                   FontSize="12"
+                                   TextColor="Blue"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
